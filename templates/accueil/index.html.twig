@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Hello AccueilController!{% endblock %}
+
+{% block body %}
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Blog
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+    <h1 class="text-center">Blog</h1>
+<div class="justify-content-around d-flex flex-wrap">
+
+{% for article in articles %}
+<div class="card border-primary mb-3" style="width: 20rem;">
+
+  <div class="card-header"><h4>{{article.title}}</h4></div>
+  <div class="card-body">
+    <h6>{{article.createdAt|date("m/d/Y")}}<h6>
+  <div><img class="card-image" style=" width: 18rem; height = auto; " src="{{article.image}}"></div>
+  </div>
+  <a href="/show/{{article.id}}" class="btn btn-primary">Détail</a>
+</div>
+{% endfor %}
+{% endblock %}
