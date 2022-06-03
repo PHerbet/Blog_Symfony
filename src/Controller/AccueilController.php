@@ -21,7 +21,10 @@ class AccueilController extends AbstractController
     #[Route('/show/{id}', name: 'app_show')]
     public function show($id, ArticleRepository $articleRepository): Response
     {
+        
         $articles = $articleRepository->find($id);
+        dd($articles);
+        
         //si l'article est nul on rentre dans la conditions
         if (!$articles )
         {

@@ -5,10 +5,6 @@
 
 {% block body %}
 
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -43,6 +39,8 @@
       <h6>{{articles.createdAt|date("m/d/Y")}}<h6>
     <div><img class="card-image" style=" width: 18rem; height = auto; " src="{{articles.image}}"></div>
     <p>{{articles.contenu}}</p>
+    <p>Auteur : {{articles.writeBy.name}}</p>
+    <p>Catégorie : {% for element in articles.category %} {{element.title}} {% endfor %} </p>
   </div>
   <a href="{{path('app_accueil')}}" class="btn btn-primary">Retour</a>
 </div>
