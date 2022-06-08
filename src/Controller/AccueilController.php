@@ -23,7 +23,7 @@ class AccueilController extends AbstractController
     {
         
         $articles = $articleRepository->find($id);
-        dd($articles);
+        // dd($articles);
         
         //si l'article est nul on rentre dans la conditions
         if (!$articles )

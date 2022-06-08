@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserFormController!{% endblock %}
+
+
+{% block body %}
+    {{ form_start(form) }}
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+        {{ form_label(form.firstname) }}
+        {{ form_widget(form.firstname) }}
+        {{ form_label(form.mail) }}
+        {{ form_widget(form.mail) }}
+        {{ form_label(form.password) }}
+        {{ form_widget(form.password) }}
+        {{ form_label(form.createdAt) }}
+        {{ form_widget(form.createdAt) }}
+        {{ form_rest(form) }}
+        <button type="submit">Enregistrer</button>
+    {{ form_end(form) }}
+{% endblock %}
+

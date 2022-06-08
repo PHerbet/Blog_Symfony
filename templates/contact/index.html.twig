@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+        {{ form_label(form.objet) }}
+        {{ form_widget(form.objet) }}
+        {{ form_label(form.contenu) }}
+        {{ form_widget(form.contenu) }}
+        {{ form_label(form.mail) }}
+        {{ form_widget(form.mail) }}
+        {{ form_label(form.date) }}
+        {{ form_widget(form.date) }}
+        {{ form_rest(form) }}
+        <button type="submit">Enregistrer</button>
+    {{ form_end(form) }}
+{% endblock %}

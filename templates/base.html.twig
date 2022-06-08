@@ -14,7 +14,7 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}
+        {% block header %}
         <div class="example-wrapper">
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
@@ -41,6 +41,9 @@
         </ul>
     </div>
     </div>
-</nav>{% endblock %}
+</nav>
+{% endblock header %}
+{% block body %}
+{% endblock body %}
     </body>
 </html>

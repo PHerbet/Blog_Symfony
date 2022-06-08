@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ShowContactController!{% endblock %}
+
+{% block body %}
+{% for contact in contacts %}
+    <h1 class="text-center">Blog</h1>
+<div class="d-flex justify-content-center ">
+  <div class="card border-primary mb-3" style="width: 20rem;">
+    <div class="card-header"><h4>{{contact.objet}}</h4></div>
+    <div class="card-body">
+      <h6>{{contact.date|date("m/d/Y")}}<h6>
+    <p>{{contact.contenu}}</p>
+    <p>Mail : {{contact.mail}}</p>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
